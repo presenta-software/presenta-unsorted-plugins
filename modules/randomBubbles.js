@@ -16,6 +16,7 @@ function randomBubbles(sceneElement, modConfig, sceneConfig){
     var num = 10
     var col = 'var(--colorFore)'
     var opc = 1
+    var size = [0.5, 5]
 
     switch(typeof modConfig){
         case 'number':
@@ -26,21 +27,25 @@ function randomBubbles(sceneElement, modConfig, sceneConfig){
             num = modConfig.amount || num
             col = modConfig.color || col
             opc = modConfig.opacity || opc
+            size = modConfig.size || size
             break
     }
 
     // create the data source for the circles generation
     const list = []
     for(var i = 0; i < num; ++i){
-        const r = Math.random()*5
         const x = Math.random()*100
         const y = Math.random()*100
         const o = Array.isArray(opc) ? opc[0] + Math.random() * (opc[1]-opc[0]) : opc
+        
         var c = col
         if(Array.isArray(col)){
             const idx = parseInt(Math.random()*col.length)
             c = col[idx]
         }
+
+        var r = Array.isArray(size) ? size[0] + Math.random() * (size[1]-size[0]) : size
+        
         list.push(`<circle opacity="${o}" fill="${c}" r="${r}" cx="${x}" cy="${y}"></circle>`)
     }
 
