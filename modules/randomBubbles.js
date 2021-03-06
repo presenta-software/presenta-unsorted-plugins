@@ -15,9 +15,9 @@ function randomBubbles(sceneElement, modConfig, sceneConfig){
 
     // handle the options and defaults
     var amount = 10
-    var color = 'var(--colorFore)'
-    var opacity = 1
-    var size = [0.5, 5]
+    var color = ['var(--colorFore)', 'var(--colorAccent)']
+    var opacity = [0.2, 0.6]
+    var size = [0.5, 15]
 
     switch(typeof modConfig){
         case 'number':
