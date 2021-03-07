@@ -10,9 +10,6 @@ Possible settings are:
 */
 function randomBubbles(sceneElement, modConfig, sceneConfig){
 
-    // in case a specific scene doesn't want this effect
-    if(!modConfig) return
-
     // handle the options and defaults
     var amount = 10
     var color = ['var(--colorFore)', 'var(--colorAccent)']
