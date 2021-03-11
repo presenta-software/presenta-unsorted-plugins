@@ -35,7 +35,8 @@
   },
   "standard": {
     "globals": [
-      "DOMParser"
+      "DOMParser",
+      "Presenta"
     ]
   },
   "browserslist": "> 0.5%, IE 11, not dead",

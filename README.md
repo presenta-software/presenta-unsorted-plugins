@@ -2,12 +2,18 @@
 
 This repository contains Proof-Of-Concept and experimental plugins for **PRESENTA Lib**.
 
-The main purpose is to test new ideas quickly leaving them available pubblicly for easy evaluation.
+The main purpose is to test new ideas quickly leaving them available pubblicly for easy evaluation and learning.
 
-For that reason, the whole repository is published under this base URL:
+For that reason, the whole repository is published under on NPM and available with UNPKG with this base URL:
 
 ```
-https://unsorted-presenta-plugins.netlify.app/
+https://unpkg.com/@presenta/unsorted/
+```
+
+as an example, `aCircle.js` can be reached by adding the relative parth:
+
+```
+https://unpkg.com/@presenta/unsorted/blocks/aCircle.js
 ```
 
 This means that you can include one or more plugins both in [Playground](https://play.presenta.cc/) tool or within any online coding tool such as [Codepen](https://codepen.io/).

@@ -3,9 +3,9 @@ This Controller plugin adds a redirectTo function when the user reaches the end 
 It exploits the 'end' event of the internal Router to do that.
 */
 const redirectTo = function (rootElement, router, ctrlConfig, projectConfig) {
-    router.on('end', e => {
-        location.href = ctrlConfig
-    })
+  router.on('end', e => {
+    location.href = ctrlConfig
+  })
 }
 
 Presenta.addController('redirectTo', redirectTo)

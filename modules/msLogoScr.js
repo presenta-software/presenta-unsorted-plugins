@@ -6,78 +6,75 @@ Options:
 - size: the size in pixels, default 100
 - delay: the millisecond of delay to begin the animation
 */
-function msLogoScr(sceneElement, modConfig){
-    
-    // options and defaults
-    const url = modConfig.url
-    const size = modConfig.size || 100
-    const delay = modConfig.delay || 0
-    let animationHandler
-    
-    // fragment
-    const str = `<div style="top:0;left:0;position:absolute;width:${size}px;height:${size}px;"><img style="width:100%;height:100%;" src="${url}" /></div>`
-    const parser = new DOMParser()
-    const el = parser.parseFromString(str, 'text/html').body.childNodes[0]
+function msLogoScr (sceneElement, modConfig) {
+  // options and defaults
+  const url = modConfig.url
+  const size = modConfig.size || 100
+  const delay = modConfig.delay || 0
+  let animationHandler
 
-    // create the animation
-    var run = () => {
+  // fragment
+  const str = `<div style="top:0;left:0;position:absolute;width:${size}px;height:${size}px;"><img style="width:100%;height:100%;" src="${url}" /></div>`
+  const parser = new DOMParser()
+  const el = parser.parseFromString(str, 'text/html').body.childNodes[0]
 
-        sceneElement.append(el)
+  // create the animation
+  var run = () => {
+    sceneElement.append(el)
 
-        const bb = sceneElement.getBoundingClientRect()
+    const bb = sceneElement.getBoundingClientRect()
 
-        let width = bb.width
-        let height = bb.height
+    const width = bb.width
+    const height = bb.height
 
-        let x = 0
-        let y = 0
-        let w = size
-        let h = size
+    let x = 0
+    let y = 0
+    const w = size
+    const h = size
 
-        let vx
-        let vy
+    let vx
+    let vy
 
-        x = width/2 - w/2
-        y = height/2 - h/2
-        
-        vx = Math.random()*6-3
-        vy = Math.random()*6-3
+    x = width / 2 - w / 2
+    y = height / 2 - h / 2
 
-        var loop = () => {
-   
-            x+=vx
-            y+=vy
+    vx = Math.random() * 6 - 3
+    vy = Math.random() * 6 - 3
 
-            if(x > width-w){
-                x = width-w
-                vx=vx*-1
-            }
-            if(y > height-h){
-                y = height-h
-                vy=vy*-1
-            }
-            
-            if(x < 0){
-                x = 0
-                vx=vx*-1
-            }
-            if(y < 0){
-                y = 0
-                vy=vy*-1
-            }
-    
-            el.style.transform = `translate(${x}px, ${y}px)`
-    
-            animationHandler = requestAnimationFrame(loop)
-        }
-        loop()
+    var loop = () => {
+      x += vx
+      y += vy
+
+      if (x > width - w) {
+        x = width - w
+        vx = vx * -1
+      }
+      if (y > height - h) {
+        y = height - h
+        vy = vy * -1
+      }
+
+      if (x < 0) {
+        x = 0
+        vx = vx * -1
+      }
+      if (y < 0) {
+        y = 0
+        vy = vy * -1
+      }
+
+      el.style.transform = `translate(${x}px, ${y}px)`
+
+      animationHandler = window.requestAnimationFrame(loop)
     }
+    loop()
+  }
 
-    setTimeout(run, delay)
+  setTimeout(run, delay)
 
-    this.destroy = () => {
-        cancelAnimationFrame(animationHandler)
-    }
+  this.destroy = () => {
+    window.cancelAnimationFrame(animationHandler)
+  }
 }
 
 Presenta.addModule('msLogoScr', msLogoScr)
