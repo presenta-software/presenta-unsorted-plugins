@@ -1,0 +1,47 @@
+{
+  "name": "@presenta/unsorted",
+  "homepage": "https://lib.presenta.cc",
+  "version": "0.0.0",
+  "description": "Unsorted PRESENTA plugins",
+  "scripts": {
+    "bump": "git add -u && git commit -m \"bump release\" && npm version patch && git push && npm publish"
+  },
+  "keywords": [
+    "presentation",
+    "slides",
+    "blocks",
+    "modern",
+    "library"
+  ],
+  "author": {
+    "name": "Fabio Franchino",
+    "email": "hello@fabiofranchino.com",
+    "web": "https://fabiofranchino.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/presenta-software/presenta-unsorted-plugins.git"
+  },
+  "bugs": {
+    "url": "https://github.com/presenta-software/presenta-unsorted-plugins/issues"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "globals": {
+    "module": false,
+    "console": false,
+    "exports": false
+  },
+  "standard": {
+    "globals": [
+      "DOMParser"
+    ]
+  },
+  "browserslist": "> 0.5%, IE 11, not dead",
+  "license": "BSD-3-Clause",
+  "dependencies": {},
+  "devDependencies": {
+    "standard": "^14.3.4"
+  }
+}
