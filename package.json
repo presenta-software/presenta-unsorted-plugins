@@ -1,7 +1,7 @@
 {
   "name": "@presenta/unsorted",
   "homepage": "https://lib.presenta.cc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "PRESENTA unsorted plugins",
   "scripts": {
     "bump": "git add -u && git commit -m \"bump release\" && npm version patch && git push && npm publish"
