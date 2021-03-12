@@ -7,6 +7,7 @@ Possible settings are:
 - color or array of colors to be used, picked randomly
 - opacity or opacity range to be randomized
 - size or size range to be randomized
+- layer, 'front' to superimpose or leave empty to put behind block contents
 */
 function randomBubbles (sceneElement, modConfig, sceneConfig) {
   // handle the options and defaults
@@ -14,6 +15,7 @@ function randomBubbles (sceneElement, modConfig, sceneConfig) {
   var color = ['var(--colorFore)', 'var(--colorAccent)', 'var(--colorBack)']
   var opacity = [0.2, 0.6]
   var size = [0.5, 15]
+  var layer = '.blockBackWrapper'
 
   switch (typeof modConfig) {
     case 'number':
@@ -25,6 +27,7 @@ function randomBubbles (sceneElement, modConfig, sceneConfig) {
       color = modConfig.color || color
       opacity = modConfig.opacity || opacity
       size = modConfig.size || size
+      layer = modConfig.layer === 'front' ? '.moduleFrontWrapper' : layer
       break
   }
 
@@ -43,7 +46,7 @@ function randomBubbles (sceneElement, modConfig, sceneConfig) {
 
     var r = Array.isArray(size) ? size[0] + Math.random() * (size[1] - size[0]) : size
 
-    list.push(`<circle opacity="${o}" fill="${c}" r="${r}" cx="${x}" cy="${y}"></circle>`)
+    list.push(`<circle style="" opacity="${o}" fill="${c}" r="${r}" cx="${x}" cy="${y}"></circle>`)
   }
 
   const parser = new DOMParser()
@@ -52,10 +55,12 @@ function randomBubbles (sceneElement, modConfig, sceneConfig) {
     </svg>`
 
   const frag = parser.parseFromString(str, 'text/html').body.childNodes[0]
-  const front = sceneElement.querySelector('.frontContainer')
+
+  // add the svg to a specific wrapper to avoid conflicts
+  const wrap = sceneElement.querySelector(layer)
 
   // append to the container
-  front.append(frag)
+  wrap.append(frag)
 }
 
 // register the module with its unique namespace
