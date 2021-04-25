@@ -16,7 +16,7 @@ as an example, `aCircle.js` can be reached by adding the relative parth:
 https://unpkg.com/@presenta/unsorted/blocks/aCircle.js
 ```
 
-This means that you can include one or more plugins both in [Playground](https://play.presenta.cc/) tool or within any online coding tool such as [Codepen](https://codepen.io/).
+This means that you can include one or more plugins both in [Playground](https://play.presenta.cc/view/qJyA0pW1bCcaQ) tool or within any online coding tool such as [Codepen](https://codepen.io/abusedmedia/pen/BapMvLQ).
 
 **A word of caution:**
 
