@@ -1,0 +1,44 @@
+{
+  "key": "randomBubbles",
+  "name": "Random bubbles",
+  "description": "Hey!",
+  "value": false,
+  "context": "modules",
+  "options": [
+    {
+      "key": "amount",
+      "label": "Amount",
+      "type": "range",
+      "min": 1,
+      "max": 30,
+      "step": 1,
+      "value": 0
+    },
+    {
+      "key": "opacity",
+      "label": "Opacity range",
+      "type": "text",
+      "eval": true,
+      "placeholder": "[0, 1]",
+      "value": null
+    },
+    {
+      "key": "size",
+      "label": "Size range",
+      "type": "text",
+      "eval": true,
+      "placeholder": "[0.5, 20]",
+      "value": null
+    },
+    {
+      "key": "layer",
+      "label": "Layer",
+      "type": "select",
+      "value": null,
+      "options": [
+        {"key":"front", "label":"Front", "value":"front"},
+        {"key":"back", "label":"Back", "value":"back"}
+      ]
+    }
+  ]
+}
