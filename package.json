@@ -1,7 +1,7 @@
 {
   "name": "@presenta/unsorted",
   "homepage": "https://lib.presenta.cc",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "PRESENTA unsorted plugins",
   "scripts": {
     "start": "browser-sync start -s --files \"**/*\" --no-ghost-mode",
