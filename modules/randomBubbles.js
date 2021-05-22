@@ -9,6 +9,7 @@ Possible settings are:
 - size or size range to be randomized
 - layer, 'front' to superimpose or leave empty to put behind block contents
 */
+
 function randomBubbles (sceneElement, modConfig, sceneConfig) {
   // handle the options and defaults
   var amount = 10
